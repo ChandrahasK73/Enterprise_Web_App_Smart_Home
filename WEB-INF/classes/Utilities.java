@@ -144,7 +144,7 @@ public class Utilities extends HttpServlet{
 		String TOMCAT_HOME = System.getProperty("catalina.home");
 			try
 			{		
-				FileInputStream fileInputStream=new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Tutorial_1\\UserDetails.txt"));
+				FileInputStream fileInputStream=new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Enterprise_Web_App_Smart_Home\\UserDetails.txt"));
 				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
 				hm= (HashMap)objectInputStream.readObject();
 			}
@@ -169,7 +169,7 @@ public class Utilities extends HttpServlet{
 		String TOMCAT_HOME = System.getProperty("catalina.home");
 			try
 			{
-				FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Tutorial_1\\PaymentDetails.txt"));
+				FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Enterprise_Web_App_Smart_Home\\PaymentDetails.txt"));
 				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
 				orderPayments = (HashMap)objectInputStream.readObject();
 			}
@@ -212,6 +212,18 @@ public class Utilities extends HttpServlet{
 			OrderItem orderitem = new OrderItem(game.getName(), game.getPrice(), game.getImage(), game.getRetailer());
 			orderItems.add(orderitem);
 		}
+		if(type.equals("lighting")){
+			Lighting lighting = null;
+			lighting = SaxParserDataStore.lightings.get(name);
+			OrderItem orderitem = new OrderItem(lighting.getName(), lighting.getPrice(), lighting.getImage(), lighting.getRetailer());
+			orderItems.add(orderitem);
+		}
+		if(type.equals("thermostat")){
+			Thermostat thermostat = null;
+			thermostat = SaxParserDataStore.thermostats.get(name);
+			OrderItem orderitem = new OrderItem(thermostat.getName(), thermostat.getPrice(), thermostat.getImage(), thermostat.getRetailer());
+			orderItems.add(orderitem);
+		}
 		if(type.equals("tablets")){
 			Tablet tablet = null;
 			tablet = SaxParserDataStore.tablets.get(name);
@@ -233,7 +245,7 @@ public class Utilities extends HttpServlet{
 			// get the payment details file 
 			try
 			{
-				FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Tutorial_1\\PaymentDetails.txt"));
+				FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Enterprise_Web_App_Smart_Home\\PaymentDetails.txt"));
 				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
 				orderPayments = (HashMap)objectInputStream.readObject();
 			}
@@ -259,7 +271,7 @@ public class Utilities extends HttpServlet{
 
 			try
 			{	
-				FileOutputStream fileOutputStream = new FileOutputStream(new File(TOMCAT_HOME+"\\webapps\\Tutorial_1\\PaymentDetails.txt"));
+				FileOutputStream fileOutputStream = new FileOutputStream(new File(TOMCAT_HOME+"\\webapps\\Enterprise_Web_App_Smart_Home\\PaymentDetails.txt"));
 				ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             	objectOutputStream.writeObject(orderPayments);
 				objectOutputStream.flush();
@@ -288,6 +300,22 @@ public class Utilities extends HttpServlet{
 			hm.putAll(SaxParserDataStore.games);
 			return hm;
 	}
+
+	/* getLighting Functions returns the  Hashmap with all Games in the store.*/
+
+	public HashMap<String, Lighting> getLighting(){
+			HashMap<String, Lighting> hm = new HashMap<String, Lighting>();
+			hm.putAll(SaxParserDataStore.lightings);
+			return hm;
+	}
+
+	/* getThermostat Functions returns the  Hashmap with all Games in the store.*/
+
+	public HashMap<String, Thermostat> getThermostat(){
+			HashMap<String, Thermostat> hm = new HashMap<String, Thermostat>();
+			hm.putAll(SaxParserDataStore.thermostats);
+			return hm;
+	}
 	
 	/* getTablets Functions returns the Hashmap with all Tablet in the store.*/
 
@@ -312,6 +340,22 @@ public class Utilities extends HttpServlet{
 	public ArrayList<String> getProductsGame(){		
 		ArrayList<String> ar = new ArrayList<String>();
 		for(Map.Entry<String, Game> entry : getGames().entrySet()){
+			ar.add(entry.getValue().getName());
+		}
+		return ar;
+	}
+
+	public ArrayList<String> getProductsLighting(){		
+		ArrayList<String> ar = new ArrayList<String>();
+		for(Map.Entry<String, Lighting> entry : getLighting().entrySet()){
+			ar.add(entry.getValue().getName());
+		}
+		return ar;
+	}
+
+	public ArrayList<String> getProductsThermostat(){		
+		ArrayList<String> ar = new ArrayList<String>();
+		for(Map.Entry<String, Thermostat> entry : getThermostat().entrySet()){
 			ar.add(entry.getValue().getName());
 		}
 		return ar;

@@ -33,38 +33,38 @@ public class GamesList extends HttpServlet {
 		}
 		else
 		{
-		  if(CategoryName.equals("electronicArts"))
+		  if(CategoryName.equals("Schlage"))
 		  {
 			for(Map.Entry<String,Game> entry : SaxParserDataStore.games.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("ElectronicArts"))
+				if(entry.getValue().getRetailer().equals("Schlage"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
-			name = "ElectronicArts";
+			name = "Schlage";
 		  }
-		  else if(CategoryName.equals("activision"))
+		  else if(CategoryName.equals("Kwikset"))
 		  {
 			for(Map.Entry<String,Game> entry : SaxParserDataStore.games.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("Activision"))
+				if(entry.getValue().getRetailer().equals("Kwikset"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}	
-			name = "Activision";
+			name = "Kwikset";
 		  }
-		  else if(CategoryName.equals("takeTwoInteractive"))
+		  else if(CategoryName.equals("Yale"))
 		  {
 			for(Map.Entry<String,Game> entry : SaxParserDataStore.games.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("TakeTwoInteractive"))
+				if(entry.getValue().getRetailer().equals("Yale"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
-			name = "TakeTwoInteractive";
+			name = "Yale";
 		  }
 		}
 

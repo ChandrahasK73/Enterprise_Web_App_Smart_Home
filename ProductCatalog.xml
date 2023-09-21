@@ -3,170 +3,305 @@
 <ProductCatalog>
 
 <ConsoleCatalog>
-    <console id="Xbox One">
-        <name>Xbox One</name>
+    <console id="Ring Video Doorbell">
+        <name>Ring Video Doorbell</name>
         <price>399.99</price>
-        <image>xbox1.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
+        <image>Ring Video Doorbell.jpg</image>
+        <manufacturer>Ring</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
         <accessories>
-            <accessory>xboxone_wc</accessory>
-            <accessory>xboxone_sh</accessory>
+            <accessory>Spare Parts for Ring Video Doorbell</accessory>
+            <!--<accessory>xboxone_sh</accessory>
 			<accessory>xboxone_kg</accessory>
             <accessory>xboxone_vb</accessory>
 			<accessory>xboxone_rs</accessory>
             <accessory>xboxone_mp</accessory>
-			<accessory>xboxone_mc</accessory>
+			<accessory>xboxone_mc</accessory>-->
 			
 			
         </accessories>
     </console>
-    <console id="xbox360">
-        <name>xbox360</name>
+    <console id="Ring Battery Doorbell Plus">
+        <name>Ring Battery Doorbell Plus</name>
         <price>399.99</price>
-        <image>xbox360.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
+        <image>Ring Battery Doorbell Plus.jpg</image>
+        <manufacturer>Ring</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
         <accessories>
-            <accessory>xbox360_wc</accessory>
+            <accessory>Ring wire spare</accessory>
+            <!--<accessory>xbox360_wc</accessory>
             <accessory>xbox360_sh</accessory>
 			<accessory>xbox360_vb</accessory>
 			<accessory>xbox360_rs</accessory>
 			<accessory>xbox360_mp</accessory>
-			<accessory>xbox360_kg</accessory>
+			<accessory>xbox360_kg</accessory>-->
         </accessories>
     </console>
 
-    <console id="PS4">
-        <name>PS4</name>
+    <console id="Nest Doorbell Corner">
+        <name>Nest Doorbell Corner</name>
         <price>349.99</price>
-        <image>PS4-console-bundle.jpg</image>
-        <manufacturer>Sony</manufacturer>
+        <image>Nest Doorbell Corner.jpg</image>
+        <manufacturer>Nest</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
         <accessories>
-            <accessory>ps4_wc</accessory>
+            <accessory>Adjustable Mount</accessory>
 			
         </accessories>
     </console>
-    <console id="PS3">
-        <name>PS3</name>
+    <console id="Google Nest Doorbell">
+        <name>Google Nest Doorbell</name>
         <price>349.99</price>
-        <image>ps3.jpg</image>
-        <manufacturer>Sony</manufacturer>
+        <image>Google Nest Doorbell.jpg</image>
+        <manufacturer>Nest</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
         <accessories>
-            <accessory>ps3_wc</accessory>
+            <accessory>elago Wall Plate</accessory>
 			
         </accessories>
     </console>
-    <console id="WII">
-        <name>WII</name>
+    <console id="Arlo Essential Video Doorbell">
+        <name>Arlo Essential Video Doorbell</name>
         <price>249.99</price>
-        <image>Wii-Console.png</image>
-        <manufacturer>Nintendo</manufacturer>
+        <image>Arlo Essential Video Doorbell.jpg</image>
+        <manufacturer>Arlo</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
         <accessories>
-            <accessory>nintendo_wc</accessory>
-            <accessory>nintendo_sh</accessory>
+            <accessory>Vinyl Siding Angle</accessory>
+            <accessory>Doorbell Pin</accessory>
         </accessories>
     </console>
 </ConsoleCatalog>
 
+
 <TabletCatalog>
-    <tablet id="ipad">
-        <name>Apple Ipad Pro</name>
+    <tablet id="Bose SoundLink">
+        <name>Bose SoundLink</name>
         <price>189.99</price>
-        <image>apple1.jpg</image>
-        <manufacturer>Apple</manufacturer>
+        <image>Bose SoundLink.jpg</image>
+        <manufacturer>Bose</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
     </tablet>
-    <tablet id="ipad3">
-        <name>Apple Ipad 3</name>
+    <tablet id="Bose Smart">
+        <name>Bose Smart</name>
         <price>189.99</price>
-        <image>apple2.jpg</image>
-        <manufacturer>Apple</manufacturer>
+        <image>Bose Smart.jpg</image>
+        <manufacturer>Bose</manufacturer>
         <condition>Used</condition>
         <discount>20.0</discount>
     </tablet>
-    <tablet id="Surface">
-        <name>Surface</name>
+    <tablet id="Sonos Move">
+        <name>Sonos Move</name>
         <price>299.99</price>
-        <image>m1.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
+        <image>Sonos Move.jpg</image>
+        <manufacturer>Sonos</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
     </tablet>
-    <tablet id="Surface4">
-        <name>Surface Pro 4</name>
+    <tablet id="Sonos Two">
+        <name>Sonos Two</name>
         <price>299.99</price>
-        <image>m2.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
+        <image>Sonos Two.jpg</image>
+        <manufacturer>Sonos</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
     </tablet>
-    <tablet id="Samsung2">
-        <name>Samsung Tab 2</name>
+    <tablet id="JBL CHARGE">
+        <name>JBL CHARGE</name>
         <price>150.99</price>
-        <image>s1.jpg</image>
-        <manufacturer>Samsung</manufacturer>
+        <image>JBL CHARGE.jpg</image>
+        <manufacturer>JBL</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
     </tablet>
 
 </TabletCatalog>
+
+
 <GamesCatalog>
-<game id="g1">
-        <name>FIFA 2016</name>
+    <game id="Schlage BE365">
+        <name>Schlage BE365</name>
         <price>50.99</price>
-        <image>ea_fifa.jpg</image>
-        <manufacturer>ElectronicArts</manufacturer>
+        <image>Schlage BE365.jpg</image>
+        <manufacturer>Schlage</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
-</game>
-<game id="g2">
-        <name>Need for Speed</name>
+    </game>
+    <game id="SCHLAGE FE595">
+        <name>SCHLAGE FE595</name>
         <price>50.99</price>
-        <image>ea_nfs.jpg</image>
-        <manufacturer>ElectronicArts</manufacturer>
+        <image>SCHLAGE FE595.jpg</image>
+        <manufacturer>Schlage</manufacturer>
         <condition>Refurbished</condition>
         <discount>15.0</discount>
-</game>
-<game id="g3">
-        <name>Call Of Duty</name>
+    </game>
+    <game id="Kwikset SmartCode">
+        <name>Kwikset SmartCode</name>
         <price>50.99</price>
-        <image>activision_cod.jpg</image>
-        <manufacturer>Activision</manufacturer>
+        <image>Kwikset SmartCode.jpg</image>
+        <manufacturer>Kwikset</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
-</game>
-<game id="g4">
-        <name>Evolve</name>
+    </game>
+    <game id="Yale Security">
+        <name>Yale Security</name>
         <price>50.99</price>
-        <image>tti_evolve.jpg</image>
-        <manufacturer>TakeTwoInteractive</manufacturer>
+        <image>Yale Security.jpg</image>
+        <manufacturer>Yale</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
-</game>
+    </game>
 </GamesCatalog>
+
+<LightingsCatalog>
+    <lighting id="Philips Hue 2-Pack">
+        <name>Philips Hue 2-Pack</name>
+        <price>50.99</price>
+        <image>Philips Hue 2-Pack.jpg</image>
+        <manufacturer>Philips</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </lighting>
+    <lighting id="Philips Hue 40W">
+        <name>Philips Hue 40W</name>
+        <price>50.99</price>
+        <image>Philips Hue 40W.jpg</image>
+        <manufacturer>Philips</manufacturer>
+        <condition>Refurbished</condition>
+        <discount>15.0</discount>
+    </lighting>
+    <lighting id="GE Lighting CYNC">
+        <name>GE Lighting CYNC</name>
+        <price>50.99</price>
+        <image>GE Lighting CYNC.jpg</image>
+        <manufacturer>GE</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </lighting>
+    <lighting id="GE CYNC Smart">
+        <name>GE CYNC Smart</name>
+        <price>50.99</price>
+        <image>GE CYNC Smart.jpg</image>
+        <manufacturer>GE</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </lighting>
+    <lighting id="OSRAM 73742">
+        <name>OSRAM 73742</name>
+        <price>50.99</price>
+        <image>OSRAM 73742.jpg</image>
+        <manufacturer>Osram</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </lighting>
+</LightingsCatalog>
+
+<ThermostatsCatalog>
+    <thermostat id="Trane XL824">
+        <name>Trane XL824</name>
+        <price>50.99</price>
+        <image>Trane XL824.jpg</image>
+        <manufacturer>Trane</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </thermostat>
+    <thermostat id="Trane XR724">
+        <name>Trane XR724</name>
+        <price>50.99</price>
+        <image>Trane XR724.jpg</image>
+        <manufacturer>Trane</manufacturer>
+        <condition>Refurbished</condition>
+        <discount>15.0</discount>
+    </thermostat>
+    <thermostat id="Sensi Touch">
+        <name>Sensi Touch</name>
+        <price>50.99</price>
+        <image>Sensi Touch.jpg</image>
+        <manufacturer>Sensi</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </thermostat>
+    <thermostat id="Sensi Touch 2">
+        <name>Sensi Touch 2</name>
+        <price>50.99</price>
+        <image>Sensi Touch 2.jpg</image>
+        <manufacturer>Sensi</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </thermostat>
+    <thermostat id="Lennox 13H14">
+        <name>Lennox 13H14</name>
+        <price>50.99</price>
+        <image>Lennox 13H14.jpg</image>
+        <manufacturer>Lennox</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+    </thermostat>
+</ThermostatsCatalog>
 
 <AccessoryCatalog>
 
-    <accessory id="xboxone_wc">
-        <name>Controller</name>
-        <price>89.99</price>
-        <image>XBOX controller.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
+    <accessory id="Spare Parts for Ring Video Doorbell">
+        <name>Spare Parts for Ring Video Doorbell</name>
+        <price>9.99</price>
+        <image>Spare Parts for Ring Video Doorbell.jpg</image>
+        <manufacturer>Ring</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
      </accessory>
 
-    <accessory id="xboxone_sh">
+     <accessory id="Ring wire spare">
+        <name>Ring wire spare</name>
+        <price>9.99</price>
+        <image>Ring wire spare.jpg</image>
+        <manufacturer>Ring</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+
+     <accessory id="Adjustable Mount">
+        <name>Adjustable Mount</name>
+        <price>9.99</price>
+        <image>Adjustable Mount.jpg</image>
+        <manufacturer>Nest</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+
+     <accessory id="elago Wall Plate">
+        <name>elago Wall Plate</name>
+        <price>9.99</price>
+        <image>elago Wall Plate.jpg</image>
+        <manufacturer>Nest</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+
+     <accessory id="Vinyl Siding Angle">
+        <name>Vinyl Siding Angle</name>
+        <price>9.99</price>
+        <image>Vinyl Siding Angle.jpg</image>
+        <manufacturer>Arlo</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+
+     <accessory id="Doorbell Pin">
+        <name>Doorbell Pin</name>
+        <price>9.99</price>
+        <image>Doorbell Pin.jpg</image>
+        <manufacturer>Arlo</manufacturer>
+        <condition>New</condition>
+        <discount>40.0</discount>
+     </accessory>
+
+   <!-- <accessory id="xboxone_sh">
         <name>Turtle Beach Headset</name>
         <price>89.99</price>
         <image>Turtle Beach Headset.jpg</image>
@@ -272,7 +407,7 @@
         <manufacturer>Microsoft</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
-     </accessory>
+     </accessory>-->
 
     <accessory id="ps4_wc">
         <name>PS Controller</name>

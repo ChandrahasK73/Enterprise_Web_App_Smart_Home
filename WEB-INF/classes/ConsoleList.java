@@ -30,38 +30,38 @@ public class ConsoleList extends HttpServlet {
 		}
 		else
 		{
-		   if(CategoryName.equals("microsoft"))
+		   if(CategoryName.equals("Ring"))
 		   {
 			 for(Map.Entry<String,Console> entry : SaxParserDataStore.consoles.entrySet())
 			 {
-				if(entry.getValue().getRetailer().equals("Microsoft"))
+				if(entry.getValue().getRetailer().equals("Ring"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 			 }
-				name = "Microsoft";
+				name = "Ring";
 		   }
-		   else if(CategoryName.equals("sony"))
+		   else if(CategoryName.equals("nest"))
 		    {
 			for(Map.Entry<String,Console> entry : SaxParserDataStore.consoles.entrySet())
 				{
-				 if(entry.getValue().getRetailer().equals("Sony"))
+				 if(entry.getValue().getRetailer().equals("Nest"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
-				 name = "Sony";
+				 name = "Nest";
 			}
-			else if(CategoryName.equals("nintendo"))
+			else if(CategoryName.equals("arlo"))
 			{
 				for(Map.Entry<String,Console> entry : SaxParserDataStore.consoles.entrySet())
 				{
-				 if(entry.getValue().getRetailer().equals("Nintendo"))
+				 if(entry.getValue().getRetailer().equals("Arlo"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
-			   	 name = "Nintendo";
+			   	 name = "Arlo";
 			}
 		}
 

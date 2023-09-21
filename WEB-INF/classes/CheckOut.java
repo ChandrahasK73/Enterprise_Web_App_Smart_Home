@@ -70,6 +70,34 @@ public class CheckOut extends HttpServlet {
 		pw.print("<td><input type='text' name='creditCardNo'>");
 		pw.print("</td></tr>");
 		pw.print("<tr><td>");
+		pw.print("Mode of purchase</td>");
+		pw.print("<td><input type='radio' name='purchaseMode' value='StorePickup' checked> Store Pickup");
+		pw.print("<input type='radio' name='purchaseMode' value='HomeDelivery'> Home Delivery");
+		pw.print("</td></tr>");
+
+		// Add IDs to the address fields for store pickup and home delivery
+		pw.print("<tr id= 'storePickupFields'><td>");
+		pw.print("Store Pickup Address:</td>");
+		pw.print("<td>");
+		pw.print("<select name='storePickupAddress'>");
+		pw.print("<option value='Address1'>Walmart Supercenter, 1234 Elm Street, Springfield, IL 62701.</option>");
+		pw.print("<option value='Address2'>Best Buy Electronics, 567 Oak Avenue, San Francisco, IL 94101.</option>");
+		pw.print("<option value='Address3'>Target Store, 789 Maple Road, New York, IL 10001</option>");
+		pw.print("<option value='Address4'>Home Depot, 32 Pine Street, Los Angeles, CA 90001.</option>");
+		pw.print("<option value='Address5'>Costco Wholesale, 876 Birch Lane, Chicago, IL 60601.</option>");
+		pw.print("<option value='Address6'>Lowe's Home Improvement, 345 Cedar Drive, Miami, FL 33101</option>");
+		pw.print("<option value='Address7'>Macy's Department Store, 210 Oakwood Avenue, Atlanta, GA 30301.</option>");
+		pw.print("<option value='Address8'>CVS Pharmacy, 654 Maplewood Drive, Dallas, TX 75201.</option>");
+		pw.print("<option value='Address9'>Barnes & Noble Booksellers, 789 Walnut Street, Seattle, WA 98101.</option>");
+		pw.print("<option value='Address10'>Bed Bath & Beyond, 987 Cherry Lane, Boston, MA 02101.</option>");
+		pw.print("</select>");
+		pw.print("</td></tr>");
+
+		pw.print("<tr id='homeDeliveryFields'>"); // Assign an ID for home delivery fields
+		pw.print("<td>Home Delivery Address:</td>");
+		pw.print("<td><input type='text' name='homeDeliveryAddress'></td>");
+		pw.print("</tr>");
+		pw.print("<tr><td>");
 	    pw.print("Customer Address</td>");
 		pw.print("<td><input type='text' name='userAddress'>");
         pw.print("</td></tr>");

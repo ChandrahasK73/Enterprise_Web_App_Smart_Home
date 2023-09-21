@@ -28,6 +28,28 @@ $('.carousel .item').each(function(){
   next.children(':first-child').clone().appendTo($(this));
 });
 });
+function toggleAddressFields() {
+    var mode = document.querySelector('input[name="purchaseMode"]:checked').value;
+    var storePickupFields = document.getElementById('storePickupFields');
+    var homeDeliveryFields = document.getElementById('homeDeliveryFields');
+    
+    if (mode === 'StorePickup') {
+        storePickupFields.style.display = 'block';
+        homeDeliveryFields.style.display = 'none';
+    } else if (mode === 'HomeDelivery') {
+        storePickupFields.style.display = 'none';
+        homeDeliveryFields.style.display = 'none';
+    }
+}
+
+// Call the function when the page loads to set the initial state
+window.addEventListener('load', toggleAddressFields);
+
+// Add event listeners to the radio buttons to call the function when they change
+var radioButtons = document.querySelectorAll('input[name="purchaseMode"]');
+radioButtons.forEach(function (radio) {
+    radio.addEventListener('change', toggleAddressFields);
+});
 </script>
 <style>
 * {
@@ -88,8 +110,8 @@ $('.carousel .item').each(function(){
 				<li><a href="ConsoleList"><span class="glyphicon">Doorbells</span></a></li>
 				<li><a href="GamesList"><span class="glyphicon">Doorlocks</span></a></li>
 				<li><a href="TabletList"><span class="glyphicon">Speakers</span></a></li>
-				<li><a href="Trending"><span class="glyphicon">Lightings </span></a></li>
-				<li><a href="Trending"><span class="glyphicon">Thermostats </span></a></li>
+				<li><a href="LightingList"><span class="glyphicon">Lightings </span></a></li>
+				<li><a href="ThermostatList"><span class="glyphicon">Thermostats </span></a></li>
 			</ul>
 		</div>	
 		<!-- end #menu -->

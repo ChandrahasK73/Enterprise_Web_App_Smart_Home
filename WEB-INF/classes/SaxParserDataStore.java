@@ -5,7 +5,7 @@
 http://www.saxproject.org/
 
 SAX is the Simple API for XML, originally a Java-only API. 
-SAX was the first widely adopted API for XML in Java, and is a “de facto” standard. 
+SAX was the first widely adopted API for XML in Java, and is a ï¿½de factoï¿½ standard. 
 The current version is SAX 2.0.1, and there are versions for several programming language environments other than Java. 
 
 The following URL from Oracle is the JAVA documentation for the API
@@ -43,10 +43,14 @@ You should extend DefaultHandler and override the method when parsin the XML doc
 public class SaxParserDataStore extends DefaultHandler {
     Console console;
     Game game;
+	Lighting lighting;
+	Thermostat thermostat;
     Tablet tablet;
     Accessory accessory;
     static HashMap<String,Console> consoles;
     static HashMap<String,Game> games;
+	static HashMap<String,Lighting> lightings;
+	static HashMap<String,Thermostat> thermostats;
     static HashMap<String,Tablet> tablets;
     static HashMap<String,Accessory> accessories;
     String consoleXmlFileName;
@@ -60,6 +64,8 @@ public class SaxParserDataStore extends DefaultHandler {
     this.consoleXmlFileName = consoleXmlFileName;
     consoles = new HashMap<String, Console>();
 	games=new  HashMap<String, Game>();
+	lightings = new HashMap<String, Lighting>();
+	thermostats = new HashMap<String, Thermostat>();
 	tablets=new HashMap<String, Tablet>();
 	accessories=new HashMap<String, Accessory>();
 	accessoryHashMap=new HashMap<String,String>();
@@ -126,6 +132,18 @@ https://docs.oracle.com/javase/7/docs/api/org/xml/sax/helpers/DefaultHandler.htm
 			game= new Game();
             game.setId(attributes.getValue("id"));
         }
+		if (elementName.equalsIgnoreCase("lighting"))
+		{
+			currentElement="lighting";
+			lighting= new Lighting();
+            lighting.setId(attributes.getValue("id"));
+        }
+		if (elementName.equalsIgnoreCase("thermostat"))
+		{
+			currentElement="thermostat";
+			thermostat= new Thermostat();
+            thermostat.setId(attributes.getValue("id"));
+        }
         if (elementName.equals("accessory") &&  !currentElement.equals("console"))
 		{
 			currentElement="accessory";
@@ -152,6 +170,14 @@ https://docs.oracle.com/javase/7/docs/api/org/xml/sax/helpers/DefaultHandler.htm
 			games.put(game.getId(),game);
 			return;
         }
+		if (element.equals("lighting")) {	  
+			lightings.put(lighting.getId(),lighting);
+			return;
+        }
+		if (element.equals("thermostat")) {	  
+			thermostats.put(thermostat.getId(),thermostat);
+			return;
+        }
         if (element.equals("accessory") && currentElement.equals("accessory")) {
 			accessories.put(accessory.getId(),accessory);       
 			return; 
@@ -170,6 +196,10 @@ https://docs.oracle.com/javase/7/docs/api/org/xml/sax/helpers/DefaultHandler.htm
 				console.setImage(elementValueRead);
         	if(currentElement.equals("game"))
 				game.setImage(elementValueRead);
+			if(currentElement.equals("lighting"))
+				lighting.setImage(elementValueRead);
+			if(currentElement.equals("thermostat"))
+				thermostat.setImage(elementValueRead);
             if(currentElement.equals("tablet"))
 				tablet.setImage(elementValueRead);
             if(currentElement.equals("accessory"))
@@ -183,6 +213,10 @@ https://docs.oracle.com/javase/7/docs/api/org/xml/sax/helpers/DefaultHandler.htm
 				console.setDiscount(Double.parseDouble(elementValueRead));
         	if(currentElement.equals("game"))
 				game.setDiscount(Double.parseDouble(elementValueRead));
+			if(currentElement.equals("lighting"))
+				lighting.setDiscount(Double.parseDouble(elementValueRead));
+			if(currentElement.equals("thermostat"))
+				thermostat.setDiscount(Double.parseDouble(elementValueRead));
             if(currentElement.equals("tablet"))
 				tablet.setDiscount(Double.parseDouble(elementValueRead));
             if(currentElement.equals("accessory"))
@@ -196,6 +230,10 @@ https://docs.oracle.com/javase/7/docs/api/org/xml/sax/helpers/DefaultHandler.htm
 				console.setCondition(elementValueRead);
         	if(currentElement.equals("game"))
 				game.setCondition(elementValueRead);
+			if(currentElement.equals("lighting"))
+				lighting.setCondition(elementValueRead);
+			if(currentElement.equals("thermostat"))
+				thermostat.setCondition(elementValueRead);
             if(currentElement.equals("tablet"))
 				tablet.setCondition(elementValueRead);
             if(currentElement.equals("accessory"))
@@ -208,6 +246,10 @@ https://docs.oracle.com/javase/7/docs/api/org/xml/sax/helpers/DefaultHandler.htm
 				console.setRetailer(elementValueRead);
         	if(currentElement.equals("game"))
 				game.setRetailer(elementValueRead);
+			if(currentElement.equals("lighting"))
+				lighting.setRetailer(elementValueRead);
+			if(currentElement.equals("thermostat"))
+				thermostat.setRetailer(elementValueRead);
             if(currentElement.equals("tablet"))
 				tablet.setRetailer(elementValueRead);
             if(currentElement.equals("accessory"))
@@ -220,6 +262,10 @@ https://docs.oracle.com/javase/7/docs/api/org/xml/sax/helpers/DefaultHandler.htm
 				console.setName(elementValueRead);
         	if(currentElement.equals("game"))
 				game.setName(elementValueRead);
+			if(currentElement.equals("lighting"))
+				lighting.setName(elementValueRead);
+			if(currentElement.equals("thermostat"))
+				thermostat.setName(elementValueRead);
             if(currentElement.equals("tablet"))
 				tablet.setName(elementValueRead);
             if(currentElement.equals("accessory"))
@@ -232,6 +278,10 @@ https://docs.oracle.com/javase/7/docs/api/org/xml/sax/helpers/DefaultHandler.htm
 				console.setPrice(Double.parseDouble(elementValueRead));
         	if(currentElement.equals("game"))
 				game.setPrice(Double.parseDouble(elementValueRead));
+			if(currentElement.equals("lighting"))
+				lighting.setPrice(Double.parseDouble(elementValueRead));
+			if(currentElement.equals("thermostat"))
+				thermostat.setPrice(Double.parseDouble(elementValueRead));
             if(currentElement.equals("tablet"))
 				tablet.setPrice(Double.parseDouble(elementValueRead));
             if(currentElement.equals("accessory"))
@@ -254,6 +304,6 @@ https://docs.oracle.com/javase/7/docs/api/org/xml/sax/helpers/DefaultHandler.htm
 //call the constructor to parse the xml and get product details
  public static void addHashmap() {
 		String TOMCAT_HOME = System.getProperty("catalina.home");	
-		new SaxParserDataStore(TOMCAT_HOME+"\\webapps\\Tutorial_1\\ProductCatalog.xml");
+		new SaxParserDataStore(TOMCAT_HOME+"\\webapps\\Enterprise_Web_App_Smart_Home\\ProductCatalog.xml");
     } 
 }
