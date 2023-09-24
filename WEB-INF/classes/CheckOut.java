@@ -66,7 +66,7 @@ public class CheckOut extends HttpServlet {
 		pw.print("<input type='hidden' name='orderTotal' value='"+orderTotal+"'>");
 		pw.print("</td></tr></table><table><tr></tr><tr></tr>");	
 		pw.print("<tr><td>");
-     	pw.print("Credit/accountNo</td>");
+     	pw.print("Credit card no</td>");
 		pw.print("<td><input type='text' name='creditCardNo'>");
 		pw.print("</td></tr>");
 		pw.print("<tr><td>");
@@ -80,6 +80,7 @@ public class CheckOut extends HttpServlet {
 		pw.print("Store Pickup Address:</td>");
 		pw.print("<td>");
 		pw.print("<select name='storePickupAddress'>");
+		pw.print("<option value='default'></option>");
 		pw.print("<option value='Walmart Supercenter, 1234 Elm Street, Springfield, IL 62701.'>Walmart Supercenter, 1234 Elm Street, Springfield, IL 62701.</option>");
 		pw.print("<option value='Best Buy Electronics, 567 Oak Avenue, San Francisco, IL 94101.'>Best Buy Electronics, 567 Oak Avenue, San Francisco, IL 94101.</option>");
 		pw.print("<option value='Target Store, 789 Maple Road, New York, IL 10001.'>Target Store, 789 Maple Road, New York, IL 10001.</option>");

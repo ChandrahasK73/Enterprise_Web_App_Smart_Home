@@ -61,7 +61,7 @@ public class Utilities extends HttpServlet{
 				}
 				
 				else if(session.getAttribute("usertype").equals("manager")){
-					result = result + "<li><a href='Registration'><span class='glyphicon'>Create Customer</span></a></li>"
+					result = result + "<li><a href='Registration'><span class='glyphicon'>CreateCustomer</span></a></li>"
 						+ "<li><a href='ViewOrder'><span class='glyphicon'>ViewOrder</span></a></li>"
 						+ "<li><a><span class='glyphicon'>Hello,"+username+"</span></a></li>"
 						+ "<li><a href='Logout'><span class='glyphicon'>Logout</span></a></li>";
