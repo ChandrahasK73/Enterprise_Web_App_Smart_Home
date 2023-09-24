@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
 import java.util.Map;
+import java.text.DecimalFormat;
 
 @WebServlet("/Cart")
 
@@ -69,8 +70,8 @@ public class Cart extends HttpServlet {
 				total = total +oi.getPrice();
 				i++;
 			}
-			pw.print("<input type='hidden' name='orderTotal' value='"+total+"'>");	
-			pw.print("<tr><th></th><th>Total</th><th>"+total+"</th>");
+			pw.print("<input type='hidden' name='orderTotal' value='"+new DecimalFormat("#.##").format(total)+"'>");	
+			pw.print("<tr><th></th><th>Total</th><th>"+new DecimalFormat("#.##").format(total)+"</th>");
 			pw.print("<tr><td></td><td></td><td><input type='submit' name='CheckOut' value='CheckOut' class='btnbuy' /></td>");
 			pw.print("</table></form>");
 			/* This code is calling Carousel.java code to implement carousel feature*/

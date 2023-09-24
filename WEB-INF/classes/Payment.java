@@ -47,7 +47,13 @@ public class Payment extends HttpServlet {
 			//Random rand = new Random(); 
 			//int orderId = rand.nextInt(100);
 			int orderId=utility.getOrderPaymentSize()+1;
-
+			String addressOfProduct = "";
+			if(purchaseMode.equals("HomeDelivery")){
+				addressOfProduct = userAddress+"St. , Chicago, "+state+", "+zipCode+", "+country;
+			}
+			else{
+				addressOfProduct = storeAddress;
+			}
 			
 
 			//iterate through each order
@@ -68,10 +74,14 @@ public class Payment extends HttpServlet {
 			calendar.add(Calendar.DAY_OF_MONTH, 5);
 			Date fiveDaysLater = calendar.getTime();
 
+			calendar.add(Calendar.DAY_OF_MONTH, 9);
+			Date twoWeeksLater = calendar.getTime();
+
 			// Format the dates for display
 			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 			String currentDates = dateFormat.format(currentDate);
 			String fiveDaysLaterDate = dateFormat.format(fiveDaysLater);
+			String twoWeeksLaterDate = dateFormat.format(twoWeeksLater);
 
 			//remove the order details from cart after processing
 			
@@ -82,15 +92,19 @@ public class Payment extends HttpServlet {
 			pw.print("<a style='font-size: 24px;'>Order</a>");
 			pw.print("</h2><div class='entry'>");
 		
-			pw.print("<h2>Your Order");
+			pw.print("<h4>Your Order");
 			pw.print("&nbsp&nbsp");  
 			pw.print("is stored ");
 			pw.print("<br>Your Order No is "+(orderId));
-			pw.print("<br>Your Order is placed on "+(currentDates));
+			if(purchaseMode.equals("HomeDelivery") && !userAddress.isEmpty())
+				pw.print("<br>Your Order is placed on "+(currentDates)+" and is home delivered to address: "+addressOfProduct+" by "+twoWeeksLaterDate);
+			else
+				pw.print("<br>Your Order is placed on "+(currentDates)+" and is ready to store pickup at address: "+addressOfProduct+" by "+twoWeeksLaterDate);
 			pw.print("<br>You can cancel the order latest by "+(fiveDaysLaterDate));
+			pw.print("<br><h5>**Terms & Conditions Apply.</h5>");
 			pw.print("<br>Thank you for shopping with Smart Homes.");
 
-			pw.print("</h2></div></div></div>");		
+			pw.print("</h4></div></div></div>");		
 			utility.printHtml("Footer.html");
 		}
 		else if(purchaseMode.equals("HomeDelivery") && !userAddress.isEmpty()){

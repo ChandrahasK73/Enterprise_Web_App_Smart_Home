@@ -103,12 +103,13 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 					pw.print("<td>OrderId:</td>");
 					pw.print("<td>UserName:</td>");
 					pw.print("<td>productOrdered:</td>");
-					pw.print("<td>productPrice:</td></tr>");
+					pw.print("<td>productPrice:</td>");
+					pw.print("<td>status:</td></tr>");
 					for (OrderPayment oi : orderPayments.get(orderId)) 
 					{
 						pw.print("<tr>");			
 						pw.print("<td><input type='radio' name='orderName' value='"+oi.getOrderName()+"'></td>");			
-						pw.print("<td>"+oi.getOrderId()+".</td><td>"+oi.getUserName()+"</td><td>"+oi.getOrderName()+"</td><td>Price: "+oi.getOrderPrice()+"</td>");
+						pw.print("<td>"+oi.getOrderId()+".</td><td>"+oi.getUserName()+"</td><td>"+oi.getOrderName()+"</td><td>Price: "+oi.getOrderPrice()+"</td><td>Out for Delivery."+"</td>");
 						pw.print("<td><input type='submit' name='Order' value='CancelOrder' class='btnbuy'></td>");
 						pw.print("</tr>");
 					

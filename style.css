@@ -4,14 +4,14 @@
 body {
 	margin: 0px;
 	padding: 0;
-	background:#0B0B61 !important;
+	background:#9b7566ad !important;
 	font-family: Georgia, "Times New Roman", Times, serif;
 	font-size: 12px;	
 }
 
 /* Decoration of CSS Headers tags for Full Website  */
 
-h1,h2,h3 {
+h1,h2,h3,h4 {
 	margin: 0 !important;
 	font-weight: normal !important;
 	color: #6666FF !important;
@@ -251,7 +251,7 @@ hr {
 /* Left Navigation Bar - Sidebar */
 #sidebar {
 	float: left;
-	width: 250px;
+	width: 215px;
 	font-size: 12px;
 }
 
@@ -268,7 +268,6 @@ hr {
 /* Left Navigation Bar - Decoration for List Items*/
 
 #sidebar li {
-	type : square;
 	margin-bottom: 20px;
 	padding: 10px 0px 10px 0px;
 	border-radius: 5px;
@@ -468,7 +467,7 @@ hr {
 	font-family: Arial;
 	color: #ffffff;
 	font-size: 15px;
-	background: #3498db;
+	background: #44494d;
 	padding: 5px 10px 5px 10px;
 	text-decoration: none;
 	display: block;
@@ -486,7 +485,7 @@ hr {
 	font-family: Arial;
 	color: #ffffff;
 	font-size: 15px;
-	background: #3498db;
+	background: #44494d;
 	padding: 5px 10px 5px 10px;
 	text-decoration: none;
 	display: block;
@@ -498,7 +497,7 @@ hr {
 /* Buy and Review Buttons Decoration for Products with :hover tags*/
 
 .btnbuy:hover,.btnreview:hover {
-	background: #3cb0fd;
+	background: #44494d;
 	text-decoration: none;
 }
 
