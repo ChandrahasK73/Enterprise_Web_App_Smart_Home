@@ -7,6 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.util.Random;
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @WebServlet("/Payment")
 
@@ -30,13 +33,22 @@ public class Payment extends HttpServlet {
 
 		String userAddress=request.getParameter("userAddress");
 		String creditCardNo=request.getParameter("creditCardNo");
+		String purchaseMode = request.getParameter("purchaseMode");
+		String storeAddress=request.getParameter("storePickupAddress");
+		String state=request.getParameter("state");
+		String zipCode=request.getParameter("zipCode");
+		String country=request.getParameter("country");
 		System.out.print("the user address is" +userAddress);
+		System.out.println("the mode of purchase is"+purchaseMode);
 		System.out.print(creditCardNo);
+		
 		if(!userAddress.isEmpty() && !creditCardNo.isEmpty() )
 		{
 			//Random rand = new Random(); 
 			//int orderId = rand.nextInt(100);
 			int orderId=utility.getOrderPaymentSize()+1;
+
+			
 
 			//iterate through each order
 
@@ -45,8 +57,21 @@ public class Payment extends HttpServlet {
 
 				//set the parameter for each column and execute the prepared statement
 
-				utility.storePayment(orderId,oi.getName(),oi.getPrice(),userAddress,creditCardNo);
+				utility.storePayment(orderId,oi.getName(),oi.getPrice(),userAddress,creditCardNo,storeAddress,state,zipCode,country,purchaseMode);
 			}
+
+			//Date of 5 days later
+			Calendar calendar = Calendar.getInstance();
+			Date currentDate = calendar.getTime();
+
+			// Add five days to the current date
+			calendar.add(Calendar.DAY_OF_MONTH, 5);
+			Date fiveDaysLater = calendar.getTime();
+
+			// Format the dates for display
+			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+			String currentDates = dateFormat.format(currentDate);
+			String fiveDaysLaterDate = dateFormat.format(fiveDaysLater);
 
 			//remove the order details from cart after processing
 			
@@ -61,9 +86,25 @@ public class Payment extends HttpServlet {
 			pw.print("&nbsp&nbsp");  
 			pw.print("is stored ");
 			pw.print("<br>Your Order No is "+(orderId));
+			pw.print("<br>Your Order is placed on "+(currentDates));
+			pw.print("<br>You can cancel the order latest by "+(fiveDaysLaterDate));
+			pw.print("<br>Thank you for shopping with Smart Homes.");
+
 			pw.print("</h2></div></div></div>");		
 			utility.printHtml("Footer.html");
-		}else
+		}
+		else if(purchaseMode.equals("HomeDelivery") && !userAddress.isEmpty()){
+			utility.printHtml("Header.html");
+			utility.printHtml("LeftNavigationBar.html");
+			pw.print("<div id='content'><div class='post'><h2 class='title meta'>");
+			pw.print("<a style='font-size: 24px;'>Order</a>");
+			pw.print("</h2><div class='entry'>");
+		
+			pw.print("<h4 style='color:red'>Please enter a valid home delivery address for door delivery.</h4>");
+			pw.print("</h2></div></div></div>");		
+			utility.printHtml("Footer.html");
+		}
+		else
 		{
 			utility.printHtml("Header.html");
 			utility.printHtml("LeftNavigationBar.html");

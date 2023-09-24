@@ -32,38 +32,38 @@ public class TabletList extends HttpServlet {
 		} 
 		else 
 		{
-			if(CategoryName.equals("apple")) 
+			if(CategoryName.equals("Bose")) 
 			{	
 				for(Map.Entry<String,Tablet> entry : SaxParserDataStore.tablets.entrySet())
 				{
-				  if(entry.getValue().getRetailer().equals("Apple"))
+				  if(entry.getValue().getRetailer().equals("Bose"))
 				  {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				  }
 				}
-				name ="Apple";
+				name ="Bose";
 			} 
-			else if (CategoryName.equals("microsoft"))
+			else if (CategoryName.equals("Sonos"))
 			{
 				for(Map.Entry<String,Tablet> entry : SaxParserDataStore.tablets.entrySet())
 				{
-				  if(entry.getValue().getRetailer().equals("Microsoft"))
+				  if(entry.getValue().getRetailer().equals("Sonos"))
 				  {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				  }
 				}
-				name = "Microsoft";
+				name = "Sonos";
 			} 
-			else if (CategoryName.equals("samsung")) 
+			else if (CategoryName.equals("JBL")) 
 			{
 				for(Map.Entry<String,Tablet> entry : SaxParserDataStore.tablets.entrySet())
 				{
-				  if(entry.getValue().getRetailer().equals("Samsung"))
+				  if(entry.getValue().getRetailer().equals("JBL"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}	
-				name = "Samsung";
+				name = "JBL";
 			}
 	    }
 
@@ -88,6 +88,9 @@ public class TabletList extends HttpServlet {
 			pw.print("<td><div id='shop_item'>");
 			pw.print("<h3>" + Tablet.getName() + "</h3>");
 			pw.print("<strong>" + Tablet.getPrice() + "$</strong><ul>");
+            pw.print("<strong>"+ "description: " + Tablet.getDescription() + "</strong><ul>");
+            pw.print("<strong>"+ "You get a " + Tablet.getWarranty() + "</strong><ul>");
+            pw.print("<strong>"+ "" + Tablet.getRebates() + "</strong><ul>");
 			pw.print("<li id='item'><img src='images/tablets/"
 					+ Tablet.getImage() + "' alt='' /></li>");
 			pw.print("<li><form method='post' action='Cart'>" +

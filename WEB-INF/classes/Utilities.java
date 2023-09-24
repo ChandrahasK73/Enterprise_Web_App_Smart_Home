@@ -43,8 +43,45 @@ public class Utilities extends HttpServlet{
 	/*  Printhtml Function gets the html file name as function Argument, 
 		If the html file name is Header.html then It gets Username from session variables.
 		Account ,Cart Information ang Logout Options are Displayed*/
-
 	public void printHtml(String file) {
+		String result = HtmlToString(file);
+		//to print the right navigation in header of username cart and logout etc
+		if (file == "Header.html") {
+				result=result+"<div id='menu' style='float: right;'><ul>";
+			if (session.getAttribute("username")!=null){
+				String username = session.getAttribute("username").toString();
+				username = Character.toUpperCase(username.charAt(0)) + username.substring(1);
+				if(session.getAttribute("usertype").equals("retailer"))
+				{
+					result = result + "<li><a href='ProductModify?button=Addproduct'><span class='glyphicon'>Addproduct</span></a></li>"
+						+ "<li><a href='ProductModify?button=Updateproduct'><span class='glyphicon'>Updateproduct</span></a></li>"
+						+"<li><a href='ProductModify?button=Deleteproduct'><span class='glyphicon'>Deleteproduct</span></a></li>"
+						+ "<li><a><span class='glyphicon'>Hello,"+username+"</span></a></li>"
+						+ "<li><a href='Logout'><span class='glyphicon'>Logout</span></a></li>";
+				}
+				
+				else if(session.getAttribute("usertype").equals("manager")){
+					result = result + "<li><a href='Registration'><span class='glyphicon'>Create Customer</span></a></li>"
+						+ "<li><a href='ViewOrder'><span class='glyphicon'>ViewOrder</span></a></li>"
+						+ "<li><a><span class='glyphicon'>Hello,"+username+"</span></a></li>"
+						+ "<li><a href='Logout'><span class='glyphicon'>Logout</span></a></li>";
+				}
+				else
+				{
+				result = result + "<li><a href='ViewOrder'><span class='glyphicon'>ViewOrder</span></a></li>"
+						+ "<li><a><span class='glyphicon'>Hello,"+username+"</span></a></li>"
+						+ "<li><a href='Account'><span class='glyphicon'>Account</span></a></li>"
+						+ "<li><a href='Logout'><span class='glyphicon'>Logout</span></a></li>";
+			    }
+			}
+			else
+				result = result +"<li><a href='ViewOrder'><span class='glyphicon'>View Order</span></a></li>"+ "<li><a href='Login'><span class='glyphicon'>Login</span></a></li>";
+				result = result +"<li><a href='Cart'><span class='glyphicon'>Cart("+CartCount()+")</span></a></li></ul></div></div><div id='page'>";
+				pw.print(result);
+		} else
+				pw.print(result);
+	}
+	/*public void printHtml(String file) {
 		String result = HtmlToString(file);
 		//to print the right navigation in header of username cart and logout etc
 		if (file == "Header.html") {
@@ -63,7 +100,7 @@ public class Utilities extends HttpServlet{
 				pw.print(result);
 		} else
 				pw.print(result);
-	}
+	}*/
 	
 
 	/*  getFullURL Function - Reconstructs the URL user request  */
@@ -144,7 +181,7 @@ public class Utilities extends HttpServlet{
 		String TOMCAT_HOME = System.getProperty("catalina.home");
 			try
 			{		
-				FileInputStream fileInputStream=new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Tutorial_1\\UserDetails.txt"));
+				FileInputStream fileInputStream=new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Enterprise_Web_App_Smart_Home\\UserDetails.txt"));
 				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
 				hm= (HashMap)objectInputStream.readObject();
 			}
@@ -169,7 +206,7 @@ public class Utilities extends HttpServlet{
 		String TOMCAT_HOME = System.getProperty("catalina.home");
 			try
 			{
-				FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Tutorial_1\\PaymentDetails.txt"));
+				FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Enterprise_Web_App_Smart_Home\\PaymentDetails.txt"));
 				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
 				orderPayments = (HashMap)objectInputStream.readObject();
 			}
@@ -212,6 +249,18 @@ public class Utilities extends HttpServlet{
 			OrderItem orderitem = new OrderItem(game.getName(), game.getPrice(), game.getImage(), game.getRetailer());
 			orderItems.add(orderitem);
 		}
+		if(type.equals("lighting")){
+			Lighting lighting = null;
+			lighting = SaxParserDataStore.lightings.get(name);
+			OrderItem orderitem = new OrderItem(lighting.getName(), lighting.getPrice(), lighting.getImage(), lighting.getRetailer());
+			orderItems.add(orderitem);
+		}
+		if(type.equals("thermostat")){
+			Thermostat thermostat = null;
+			thermostat = SaxParserDataStore.thermostats.get(name);
+			OrderItem orderitem = new OrderItem(thermostat.getName(), thermostat.getPrice(), thermostat.getImage(), thermostat.getRetailer());
+			orderItems.add(orderitem);
+		}
 		if(type.equals("tablets")){
 			Tablet tablet = null;
 			tablet = SaxParserDataStore.tablets.get(name);
@@ -227,13 +276,13 @@ public class Utilities extends HttpServlet{
 	}
 	// store the payment details for orders
 	public void storePayment(int orderId,
-		String orderName,double orderPrice,String userAddress,String creditCardNo){
+		String orderName,double orderPrice,String userAddress,String creditCardNo, String storeAddress, String state, String zipCode, String country, String purchaseMode){
 		HashMap<Integer, ArrayList<OrderPayment>> orderPayments= new HashMap<Integer, ArrayList<OrderPayment>>();
 		String TOMCAT_HOME = System.getProperty("catalina.home");
 			// get the payment details file 
 			try
 			{
-				FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Tutorial_1\\PaymentDetails.txt"));
+				FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Enterprise_Web_App_Smart_Home\\PaymentDetails.txt"));
 				ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
 				orderPayments = (HashMap)objectInputStream.readObject();
 			}
@@ -252,14 +301,14 @@ public class Utilities extends HttpServlet{
 				orderPayments.put(orderId, arr);
 			}
 		ArrayList<OrderPayment> listOrderPayment = orderPayments.get(orderId);		
-		OrderPayment orderpayment = new OrderPayment(orderId,username(),orderName,orderPrice,userAddress,creditCardNo);
+		OrderPayment orderpayment = new OrderPayment(orderId,username(),orderName,orderPrice,userAddress,creditCardNo,storeAddress,state,zipCode,country,purchaseMode);
 		listOrderPayment.add(orderpayment);	
 			
 			// add order details into file
 
 			try
 			{	
-				FileOutputStream fileOutputStream = new FileOutputStream(new File(TOMCAT_HOME+"\\webapps\\Tutorial_1\\PaymentDetails.txt"));
+				FileOutputStream fileOutputStream = new FileOutputStream(new File(TOMCAT_HOME+"\\webapps\\Enterprise_Web_App_Smart_Home\\PaymentDetails.txt"));
 				ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
             	objectOutputStream.writeObject(orderPayments);
 				objectOutputStream.flush();
@@ -288,6 +337,22 @@ public class Utilities extends HttpServlet{
 			hm.putAll(SaxParserDataStore.games);
 			return hm;
 	}
+
+	/* getLighting Functions returns the  Hashmap with all Games in the store.*/
+
+	public HashMap<String, Lighting> getLighting(){
+			HashMap<String, Lighting> hm = new HashMap<String, Lighting>();
+			hm.putAll(SaxParserDataStore.lightings);
+			return hm;
+	}
+
+	/* getThermostat Functions returns the  Hashmap with all Games in the store.*/
+
+	public HashMap<String, Thermostat> getThermostat(){
+			HashMap<String, Thermostat> hm = new HashMap<String, Thermostat>();
+			hm.putAll(SaxParserDataStore.thermostats);
+			return hm;
+	}
 	
 	/* getTablets Functions returns the Hashmap with all Tablet in the store.*/
 
@@ -312,6 +377,22 @@ public class Utilities extends HttpServlet{
 	public ArrayList<String> getProductsGame(){		
 		ArrayList<String> ar = new ArrayList<String>();
 		for(Map.Entry<String, Game> entry : getGames().entrySet()){
+			ar.add(entry.getValue().getName());
+		}
+		return ar;
+	}
+
+	public ArrayList<String> getProductsLighting(){		
+		ArrayList<String> ar = new ArrayList<String>();
+		for(Map.Entry<String, Lighting> entry : getLighting().entrySet()){
+			ar.add(entry.getValue().getName());
+		}
+		return ar;
+	}
+
+	public ArrayList<String> getProductsThermostat(){		
+		ArrayList<String> ar = new ArrayList<String>();
+		for(Map.Entry<String, Thermostat> entry : getThermostat().entrySet()){
 			ar.add(entry.getValue().getName());
 		}
 		return ar;

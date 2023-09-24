@@ -33,38 +33,38 @@ public class GamesList extends HttpServlet {
 		}
 		else
 		{
-		  if(CategoryName.equals("electronicArts"))
+		  if(CategoryName.equals("Schlage"))
 		  {
 			for(Map.Entry<String,Game> entry : SaxParserDataStore.games.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("ElectronicArts"))
+				if(entry.getValue().getRetailer().equals("Schlage"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
-			name = "ElectronicArts";
+			name = "Schlage";
 		  }
-		  else if(CategoryName.equals("activision"))
+		  else if(CategoryName.equals("Kwikset"))
 		  {
 			for(Map.Entry<String,Game> entry : SaxParserDataStore.games.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("Activision"))
+				if(entry.getValue().getRetailer().equals("Kwikset"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}	
-			name = "Activision";
+			name = "Kwikset";
 		  }
-		  else if(CategoryName.equals("takeTwoInteractive"))
+		  else if(CategoryName.equals("Yale"))
 		  {
 			for(Map.Entry<String,Game> entry : SaxParserDataStore.games.entrySet())
 				{
-				if(entry.getValue().getRetailer().equals("TakeTwoInteractive"))
+				if(entry.getValue().getRetailer().equals("Yale"))
 				 {
 					 hm.put(entry.getValue().getId(),entry.getValue());
 				 }
 				}
-			name = "TakeTwoInteractive";
+			name = "Yale";
 		  }
 		}
 
@@ -87,6 +87,9 @@ public class GamesList extends HttpServlet {
 			pw.print("<td><div id='shop_item'>");
 			pw.print("<h3>"+game.getName()+"</h3>");
 			pw.print("<strong>"+ "$" + game.getPrice() + "</strong><ul>");
+            pw.print("<strong>"+ "description: " + game.getDescription() + "</strong><ul>");
+            pw.print("<strong>"+ "You get a " + game.getWarranty() + "</strong><ul>");
+            pw.print("<strong>"+ "" + game.getRebates() + "</strong><ul>");
 			pw.print("<li id='item'><img src='images/games/"+game.getImage()+"' alt='' /></li>");
 			pw.print("<li><form method='post' action='Cart'>" +
 					"<input type='hidden' name='name' value='"+entry.getKey()+"'>"+

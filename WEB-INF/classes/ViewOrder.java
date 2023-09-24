@@ -53,7 +53,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 
 		try
 		{
-			FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Tutorial_1\\PaymentDetails.txt"));
+			FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Enterprise_Web_App_Smart_Home\\PaymentDetails.txt"));
 			ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
 			orderPayments = (HashMap)objectInputStream.readObject();
 		}
@@ -75,7 +75,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 				//get the order details from file
 				try
 				{
-					FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Tutorial_1\\PaymentDetails.txt"));
+					FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Enterprise_Web_App_Smart_Home\\PaymentDetails.txt"));
 					ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
 					orderPayments = (HashMap)objectInputStream.readObject();
 				}
@@ -138,7 +138,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 				try
 				{
 		
-					FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Tutorial_1\\PaymentDetails.txt"));
+					FileInputStream fileInputStream = new FileInputStream(new File(TOMCAT_HOME+"\\webapps\\Enterprise_Web_App_Smart_Home\\PaymentDetails.txt"));
 					ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);	      
 					orderPayments = (HashMap)objectInputStream.readObject();
 				}
@@ -149,11 +149,12 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 				//get the exact order with same ordername and add it into cancel list to remove it later
 				for (OrderPayment oi : orderPayments.get(orderId)) 
 					{
-							if(oi.getOrderName().equals(orderName) && oi.getUserName().equals(username))
-							{
-								ListOrderPayment.add(oi);
+							//if(oi.getOrderName().equals(orderName) && oi.getUserName().equals(username))
+							//{
+								//ListOrderPayment.add(oi);
 								pw.print("<h4 style='color:red'>Your Order is Cancelled</h4>");								
-							}
+							//}
+							break;
 					}
 				//remove all the orders from hashmap that exist in cancel list
 				orderPayments.get(orderId).removeAll(ListOrderPayment);
@@ -164,7 +165,7 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 				//save the updated hashmap with removed order to the file	
 				try
 				{	
-					FileOutputStream fileOutputStream = new FileOutputStream(new File(TOMCAT_HOME+"\\webapps\\Tutorial_1\\PaymentDetails.txt"));
+					FileOutputStream fileOutputStream = new FileOutputStream(new File(TOMCAT_HOME+"\\webapps\\Enterprise_Web_App_Smart_Home\\PaymentDetails.txt"));
 					ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 					objectOutputStream.writeObject(orderPayments);
 					objectOutputStream.flush();
