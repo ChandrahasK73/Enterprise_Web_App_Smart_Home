@@ -289,6 +289,54 @@ https://docs.oracle.com/javase/7/docs/api/org/xml/sax/helpers/DefaultHandler.htm
 			return;
         }
 
+		if (element.equalsIgnoreCase("description")) {
+            if(currentElement.equals("console"))
+				console.setDescription(elementValueRead);
+        	if(currentElement.equals("game"))
+				game.setDescription(elementValueRead);
+			if(currentElement.equals("lighting"))
+				lighting.setDescription(elementValueRead);
+			if(currentElement.equals("thermostat"))
+				thermostat.setDescription(elementValueRead);
+            if(currentElement.equals("tablet"))
+				tablet.setDescription(elementValueRead);
+            if(currentElement.equals("accessory"))
+				accessory.setDescription(elementValueRead);          
+			return;
+	    }
+
+		if (element.equalsIgnoreCase("warranty")) {
+            if(currentElement.equals("console"))
+				console.setWarranty(elementValueRead);
+        	if(currentElement.equals("game"))
+				game.setWarranty(elementValueRead);
+			if(currentElement.equals("lighting"))
+				lighting.setWarranty(elementValueRead);
+			if(currentElement.equals("thermostat"))
+				thermostat.setWarranty(elementValueRead);
+            if(currentElement.equals("tablet"))
+				tablet.setWarranty(elementValueRead);
+            if(currentElement.equals("accessory"))
+				accessory.setWarranty(elementValueRead);          
+			return;
+	    }
+
+		if (element.equalsIgnoreCase("rebates")) {
+            if(currentElement.equals("console"))
+				console.setRebates(elementValueRead);
+        	if(currentElement.equals("game"))
+				game.setRebates(elementValueRead);
+			if(currentElement.equals("lighting"))
+				lighting.setRebates(elementValueRead);
+			if(currentElement.equals("thermostat"))
+				thermostat.setRebates(elementValueRead);
+            if(currentElement.equals("tablet"))
+				tablet.setRebates(elementValueRead);
+            if(currentElement.equals("accessory"))
+				accessory.setRebates(elementValueRead);          
+			return;
+	    }
+
 	}
 	//get each element in xml tag
     @Override

@@ -10,8 +10,12 @@
         <manufacturer>Ring</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
+        <description>New Ring Video Doorbell</description>
+        <warranty>2 Yr Warranty</warranty>
+        <rebates>5% Manufacturer Rebate</rebates>
         <accessories>
             <accessory>Spare Parts for Ring Video Doorbell</accessory>
+            <accessory>Ring wire spare</accessory>
             <!--<accessory>xboxone_sh</accessory>
 			<accessory>xboxone_kg</accessory>
             <accessory>xboxone_vb</accessory>
@@ -29,6 +33,9 @@
         <manufacturer>Ring</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
+        <description>New Ring Battery Doorbell Plus</description>
+        <warranty>2 Yr Warranty</warranty>
+        <rebates>3% manufacturer rebate</rebates>
         <accessories>
             <accessory>Ring wire spare</accessory>
             <!--<accessory>xbox360_wc</accessory>
@@ -47,6 +54,9 @@
         <manufacturer>Nest</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
+        <description>New Nest Doorbell Corner</description>
+        <warranty>1 Yr warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
         <accessories>
             <accessory>Adjustable Mount</accessory>
 			
@@ -59,6 +69,9 @@
         <manufacturer>Nest</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
+        <description>New Google Nest Doorbell</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>3% manufacturer rebate</rebates>
         <accessories>
             <accessory>elago Wall Plate</accessory>
 			
@@ -71,6 +84,9 @@
         <manufacturer>Arlo</manufacturer>
         <condition>New</condition>
         <discount>10.0</discount>
+        <description>New Arlo Essential Video Doorbell</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
         <accessories>
             <accessory>Vinyl Siding Angle</accessory>
             <accessory>Doorbell Pin</accessory>
@@ -87,6 +103,9 @@
         <manufacturer>Bose</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+        <description>New Bose SoundLink</description>
+        <warranty>3 Yr warranty</warranty>
+        <rebates>5% manufacturer rebate</rebates>
     </tablet>
     <tablet id="Bose Smart">
         <name>Bose Smart</name>
@@ -95,6 +114,9 @@
         <manufacturer>Bose</manufacturer>
         <condition>Used</condition>
         <discount>20.0</discount>
+        <description>Used Bose Smart</description>
+        <warranty>0 Yr warranty</warranty>
+        <rebates>0% manufacturer rebate</rebates>
     </tablet>
     <tablet id="Sonos Move">
         <name>Sonos Move</name>
@@ -103,6 +125,9 @@
         <manufacturer>Sonos</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <description>New Sonos Move</description>
+        <warranty>1 Yr warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
     </tablet>
     <tablet id="Sonos Two">
         <name>Sonos Two</name>
@@ -111,6 +136,9 @@
         <manufacturer>Sonos</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <description>New Sonos Two</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>4% manufacturer rebate</rebates>
     </tablet>
     <tablet id="JBL CHARGE">
         <name>JBL CHARGE</name>
@@ -119,6 +147,9 @@
         <manufacturer>JBL</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <description>New JBL CHARGE</description>
+        <warranty>2 Yr warranty</warranty>
+        <rebates>$% manufacturer rebate</rebates>
     </tablet>
 
 </TabletCatalog>
@@ -132,6 +163,9 @@
         <manufacturer>Schlage</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <description>New Schlage BE365</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
     </game>
     <game id="SCHLAGE FE595">
         <name>SCHLAGE FE595</name>
@@ -140,6 +174,9 @@
         <manufacturer>Schlage</manufacturer>
         <condition>Refurbished</condition>
         <discount>15.0</discount>
+        <description>Refurbished SCHLAGE FE595</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
     </game>
     <game id="Kwikset SmartCode">
         <name>Kwikset SmartCode</name>
@@ -148,6 +185,20 @@
         <manufacturer>Kwikset</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <description>New Kwikset SmartCode</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>3% manufacturer rebate</rebates>
+    </game>
+    <game id="Kwikset Code jim">
+        <name>Kwikset Code Jim</name>
+        <price>52.99</price>
+        <image>SCHLAGE FE595.jpg</image>
+        <manufacturer>Kwikset</manufacturer>
+        <condition>New</condition>
+        <discount>15.0</discount>
+        <description>New Kwikset Code Jim</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>3% manufacturer rebate</rebates>
     </game>
     <game id="Yale Security">
         <name>Yale Security</name>
@@ -156,6 +207,9 @@
         <manufacturer>Yale</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <description>New Yale Security</description>
+        <warranty>2 Yr warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
     </game>
 </GamesCatalog>
 
@@ -167,6 +221,9 @@
         <manufacturer>Philips</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <description>New Philips Hue 2-Pack</description>
+        <warranty>2 Yr warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
     </lighting>
     <lighting id="Philips Hue 40W">
         <name>Philips Hue 40W</name>
@@ -175,6 +232,9 @@
         <manufacturer>Philips</manufacturer>
         <condition>Refurbished</condition>
         <discount>15.0</discount>
+        <description>Refurbished Philips Hue 40W</description>
+        <warranty>2 Yr warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
     </lighting>
     <lighting id="GE Lighting CYNC">
         <name>GE Lighting CYNC</name>
@@ -183,6 +243,9 @@
         <manufacturer>GE</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <description>New GE Lighting CYNC </description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
     </lighting>
     <lighting id="GE CYNC Smart">
         <name>GE CYNC Smart</name>
@@ -191,6 +254,9 @@
         <manufacturer>GE</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <description>New GE CYNC Smart</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
     </lighting>
     <lighting id="OSRAM 73742">
         <name>OSRAM 73742</name>
@@ -199,6 +265,9 @@
         <manufacturer>Osram</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <description>New OSRAM 73742</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
     </lighting>
 </LightingsCatalog>
 
@@ -210,6 +279,9 @@
         <manufacturer>Trane</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <description>New Trane XL824</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
     </thermostat>
     <thermostat id="Trane XR724">
         <name>Trane XR724</name>
@@ -218,6 +290,9 @@
         <manufacturer>Trane</manufacturer>
         <condition>Refurbished</condition>
         <discount>15.0</discount>
+        <description>Refurbished Trane XR724</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>3% manufacturer rebate</rebates>
     </thermostat>
     <thermostat id="Sensi Touch">
         <name>Sensi Touch</name>
@@ -226,6 +301,9 @@
         <manufacturer>Sensi</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <description>New Sensi Touch</description>
+        <warranty>2 yr warranty</warranty>
+        <rebates>1% manufacturer rebate</rebates>
     </thermostat>
     <thermostat id="Sensi Touch 2">
         <name>Sensi Touch 2</name>
@@ -234,6 +312,9 @@
         <manufacturer>Sensi</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <description>New Sensi Touch 2</description>
+        <warranty>2yr warranty</warranty>
+        <rebates>1% manufacturer rebate</rebates>
     </thermostat>
     <thermostat id="Lennox 13H14">
         <name>Lennox 13H14</name>
@@ -242,6 +323,9 @@
         <manufacturer>Lennox</manufacturer>
         <condition>New</condition>
         <discount>15.0</discount>
+        <description>New Lennox 13H14</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
     </thermostat>
 </ThermostatsCatalog>
 
@@ -254,6 +338,9 @@
         <manufacturer>Ring</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+        <description>New Spare Parts for Ring</description>
+        <warranty>6 months warranty</warranty>
+        <rebates>0.5% manufacturer rebate</rebates>
      </accessory>
 
      <accessory id="Ring wire spare">
@@ -263,6 +350,9 @@
         <manufacturer>Ring</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+        <description>New Ring wire spare</description>
+        <warranty>6 months warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
      </accessory>
 
      <accessory id="Adjustable Mount">
@@ -272,6 +362,9 @@
         <manufacturer>Nest</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+        <description>New Adjustable Mount</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>4% manufacturer rebate</rebates>
      </accessory>
 
      <accessory id="elago Wall Plate">
@@ -281,6 +374,9 @@
         <manufacturer>Nest</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+        <description>New elago Wall Plate</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>1% manufacturer rebate</rebates>
      </accessory>
 
      <accessory id="Vinyl Siding Angle">
@@ -290,6 +386,9 @@
         <manufacturer>Arlo</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+        <description>New Vinyl Siding Angle</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>3% manufacturer rebate</rebates>
      </accessory>
 
      <accessory id="Doorbell Pin">
@@ -299,115 +398,10 @@
         <manufacturer>Arlo</manufacturer>
         <condition>New</condition>
         <discount>40.0</discount>
+        <description>New Doorbell Pin</description>
+        <warranty>1 yr warranty</warranty>
+        <rebates>2% manufacturer rebate</rebates>
      </accessory>
-
-   <!-- <accessory id="xboxone_sh">
-        <name>Turtle Beach Headset</name>
-        <price>89.99</price>
-        <image>Turtle Beach Headset.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-	 
-	 <accessory id="xboxone_vb">
-        <name>joystick</name>
-        <price>89.99</price>
-        <image>joystick.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-    <accessory id="xboxone_kg">
-        <name>Keypad</name>
-        <price>89.99</price>
-        <image>keypad.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-	 
-	 <accessory id="xboxone_rs">
-        <name>Starterkit</name>
-        <price>89.99</price>
-        <image>starterkit.jpeg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-    <accessory id="xboxone_mp">
-        <name>Wireless adpter</name>
-        <price>89.99</price>
-        <image>wirelessadapter.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-	 
-	 <accessory id="xboxone_mc">
-        <name>Wireless </name>
-        <price>89.99</price>
-        <image>wirelessadapter.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-	 
-
-    <accessory id="xbox360_wc">
-        <name>XBOX Speeding Wheel</name>
-        <price>89.99</price>
-        <image>XBOX360-SpeedWheel.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-
-    <accessory id="xbox360_sh">
-        <name>XBOX Wireless Adapter</name>
-        <price>89.99</price>
-        <image>xbox360_wa.png</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-	 
-	 <accessory id="xbox360_vb">
-        <name>Remote</name>
-        <price>89.99</price>
-        <image>remote.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-	 	 <accessory id="xbox360_rs">
-        <name>messengerkit</name>
-        <price>89.99</price>
-        <image>messengerkit.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-	 
-	 	 <accessory id="xbox360_mp">
-        <name>Steering</name>
-        <price>89.99</price>
-        <image>steering.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>
-	 
-	 	 <accessory id="xbox360_kg">
-        <name>Charger</name>
-        <price>89.99</price>
-        <image>charger.jpg</image>
-        <manufacturer>Microsoft</manufacturer>
-        <condition>New</condition>
-        <discount>40.0</discount>
-     </accessory>-->
 
     <accessory id="ps4_wc">
         <name>PS Controller</name>

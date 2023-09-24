@@ -17,16 +17,67 @@ public class OrderPayment implements Serializable{
 	private double orderPrice;
 	private String userAddress;
 	private String creditCardNo;
+	private String storeAddress;
+	private String state;
+	private String zipCode;
+	private String country;
+	private String purchaseMode;
 	
-	public OrderPayment(int orderId,String userName,String orderName,double orderPrice,String userAddress,String creditCardNo){
+	public OrderPayment(int orderId,String userName,String orderName,double orderPrice,String userAddress,String creditCardNo,
+							String storeAddress, String state, String zipCode, String country, String purchaseMode){
 		this.orderId=orderId;
 		this.userName=userName;
 		this.orderName=orderName;
 	 	this.orderPrice=orderPrice;
 		this.userAddress=userAddress;
 	 	this.creditCardNo=creditCardNo;
+		this.storeAddress = storeAddress;
+		this.state = state;
+		this.zipCode = zipCode;
+		this.country = country;
+		this.purchaseMode = purchaseMode;
 		}
 
+	public String getStoreAddress() {
+		return storeAddress;
+	}
+
+	public void setStoreAddress(String storeAddress) {
+		this.storeAddress = storeAddress;
+	}
+
+	public String getPurchaseMode() {
+		return purchaseMode;
+	}
+
+	public void setPurchaseMode(String purchaseMode) {
+		this.purchaseMode = purchaseMode;
+	}
+
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getZipCode() {
+		return zipCode;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+	
 	public String getUserAddress() {
 		return userAddress;
 	}

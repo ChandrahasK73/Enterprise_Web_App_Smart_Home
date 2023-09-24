@@ -23,8 +23,11 @@ public class Thermostat extends HttpServlet{
 	private String retailer;
 	private String condition;
 	private double discount;
+    private String description;
+    private String warranty;
+    private String rebates;
 	
-	public Thermostat(String id,String name, double price, String image, String retailer,String condition,double discount){
+	public Thermostat(String id,String name, double price, String image, String retailer,String condition,double discount,String description,String warranty,String rebates){
 		this.id=id;
 		this.name=name;
 		this.price=price;
@@ -32,6 +35,9 @@ public class Thermostat extends HttpServlet{
 		this.condition=condition;
 		this.discount = discount;
 		this.retailer = retailer;
+        this.description = description;
+        this.warranty = warranty;
+        this.rebates = rebates;
 	}
 	
 	public Thermostat(){
@@ -84,6 +90,30 @@ public class Thermostat extends HttpServlet{
 
 	public void setDiscount(double discount) {
 		this.discount = discount;
+	}
+
+    public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+    public String getWarranty() {
+		return warranty;
+	}
+
+	public void setWarranty(String warranty) {
+		this.warranty = warranty;
+	}
+
+    public String getRebates() {
+		return rebates;
+	}
+
+	public void setRebates(String rebates) {
+		this.rebates = rebates;
 	}
 	
 }

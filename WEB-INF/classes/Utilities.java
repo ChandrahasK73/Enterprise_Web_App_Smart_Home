@@ -43,8 +43,45 @@ public class Utilities extends HttpServlet{
 	/*  Printhtml Function gets the html file name as function Argument, 
 		If the html file name is Header.html then It gets Username from session variables.
 		Account ,Cart Information ang Logout Options are Displayed*/
-
 	public void printHtml(String file) {
+		String result = HtmlToString(file);
+		//to print the right navigation in header of username cart and logout etc
+		if (file == "Header.html") {
+				result=result+"<div id='menu' style='float: right;'><ul>";
+			if (session.getAttribute("username")!=null){
+				String username = session.getAttribute("username").toString();
+				username = Character.toUpperCase(username.charAt(0)) + username.substring(1);
+				if(session.getAttribute("usertype").equals("retailer"))
+				{
+					result = result + "<li><a href='ProductModify?button=Addproduct'><span class='glyphicon'>Addproduct</span></a></li>"
+						+ "<li><a href='ProductModify?button=Updateproduct'><span class='glyphicon'>Updateproduct</span></a></li>"
+						+"<li><a href='ProductModify?button=Deleteproduct'><span class='glyphicon'>Deleteproduct</span></a></li>"
+						+ "<li><a><span class='glyphicon'>Hello,"+username+"</span></a></li>"
+						+ "<li><a href='Logout'><span class='glyphicon'>Logout</span></a></li>";
+				}
+				
+				else if(session.getAttribute("usertype").equals("manager")){
+					result = result + "<li><a href='Registration'><span class='glyphicon'>Create Customer</span></a></li>"
+						+ "<li><a href='ViewOrder'><span class='glyphicon'>ViewOrder</span></a></li>"
+						+ "<li><a><span class='glyphicon'>Hello,"+username+"</span></a></li>"
+						+ "<li><a href='Logout'><span class='glyphicon'>Logout</span></a></li>";
+				}
+				else
+				{
+				result = result + "<li><a href='ViewOrder'><span class='glyphicon'>ViewOrder</span></a></li>"
+						+ "<li><a><span class='glyphicon'>Hello,"+username+"</span></a></li>"
+						+ "<li><a href='Account'><span class='glyphicon'>Account</span></a></li>"
+						+ "<li><a href='Logout'><span class='glyphicon'>Logout</span></a></li>";
+			    }
+			}
+			else
+				result = result +"<li><a href='ViewOrder'><span class='glyphicon'>View Order</span></a></li>"+ "<li><a href='Login'><span class='glyphicon'>Login</span></a></li>";
+				result = result +"<li><a href='Cart'><span class='glyphicon'>Cart("+CartCount()+")</span></a></li></ul></div></div><div id='page'>";
+				pw.print(result);
+		} else
+				pw.print(result);
+	}
+	/*public void printHtml(String file) {
 		String result = HtmlToString(file);
 		//to print the right navigation in header of username cart and logout etc
 		if (file == "Header.html") {
@@ -63,7 +100,7 @@ public class Utilities extends HttpServlet{
 				pw.print(result);
 		} else
 				pw.print(result);
-	}
+	}*/
 	
 
 	/*  getFullURL Function - Reconstructs the URL user request  */
@@ -239,7 +276,7 @@ public class Utilities extends HttpServlet{
 	}
 	// store the payment details for orders
 	public void storePayment(int orderId,
-		String orderName,double orderPrice,String userAddress,String creditCardNo){
+		String orderName,double orderPrice,String userAddress,String creditCardNo, String storeAddress, String state, String zipCode, String country, String purchaseMode){
 		HashMap<Integer, ArrayList<OrderPayment>> orderPayments= new HashMap<Integer, ArrayList<OrderPayment>>();
 		String TOMCAT_HOME = System.getProperty("catalina.home");
 			// get the payment details file 
@@ -264,7 +301,7 @@ public class Utilities extends HttpServlet{
 				orderPayments.put(orderId, arr);
 			}
 		ArrayList<OrderPayment> listOrderPayment = orderPayments.get(orderId);		
-		OrderPayment orderpayment = new OrderPayment(orderId,username(),orderName,orderPrice,userAddress,creditCardNo);
+		OrderPayment orderpayment = new OrderPayment(orderId,username(),orderName,orderPrice,userAddress,creditCardNo,storeAddress,state,zipCode,country,purchaseMode);
 		listOrderPayment.add(orderpayment);	
 			
 			// add order details into file
